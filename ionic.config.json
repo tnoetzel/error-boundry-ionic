@@ -1,0 +1,7 @@
+{
+  "name": "error-boundry-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
