@@ -2,12 +2,12 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/rea
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
 import ErrorBoundary from '../components/ErrorBoundary';
+import Test from '../components/Test';
+import Layout from '../components/Layout';
 
 function throwError(shouldError: boolean) {
   if (shouldError) {
     throw Error("I crashed");
-  } else {
-    return <></>;
   }
 }
 
@@ -27,11 +27,15 @@ const Home: React.FC = () => {
         </IonHeader>
 
         <ErrorBoundary>
-          YO
-              {throwError(true)}
+          <Layout>
+            <div>
+              {/* EB DOES CATCH */}
+              <Test />
+              {/* EB DOES NOT CATCH */}
+              {/* {throwError(true)} */}
+            </div>
+          </Layout>
         </ErrorBoundary>
-
-        <ExploreContainer />
 
       </IonContent>
     </IonPage>
